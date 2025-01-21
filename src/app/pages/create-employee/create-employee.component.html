@@ -1,0 +1,49 @@
+<div class="create-employee-container">
+  <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+    <app-custom-input
+      id="id"
+      label="Employee ID"
+      placeholder="Enter 4-digit ID"
+      name="id"
+      [(ngModel)]="employee.id"
+      required
+      pattern="^[0-9]{4}$"
+    ></app-custom-input>
+
+    <app-custom-input
+      id="name"
+      label="Name"
+      placeholder="Enter employee name"
+      name="name"
+      [(ngModel)]="employee.name"
+      required
+      minlength="1"
+      maxlength="20"
+      pattern="^[A-Za-z ]+$"
+    ></app-custom-input>
+
+    <app-custom-input
+      id="age"
+      label="Age"
+      placeholder="Enter 2-digit age"
+      name="age"
+      [(ngModel)]="employee.age"
+      required
+      pattern="^[0-9]{2}$"
+    ></app-custom-input>
+
+    <app-custom-input
+      id="address"
+      label="Address"
+      placeholder="Enter address"
+      name="address"
+      [(ngModel)]="employee.address"
+      required
+      minlength="1"
+      maxlength="30"
+      pattern="^[A-Za-z0-9 ,.-]+$"
+    ></app-custom-input>
+
+    <app-custom-button label="Save" type="submit"></app-custom-button>
+  </form>
+</div>
